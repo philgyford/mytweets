@@ -60,8 +60,8 @@ Directions:
 
     or use the -f option on the command line.
    
-7) Optionally add the TIMELINE argument which can have either 'user'  
-   (default) or 'friends', into config.py:
+7) Optionally add the TIMELINE argument which can be one of 'user'  
+   (default), 'friends', 'mentions' or 'direct' into config.py:
 
     TIMELINE = 'friends'
     
@@ -71,7 +71,7 @@ Directions:
 
    ./fetch.py [-k your-consumer-key -s your-consumer-secret 
    -o your-access-token -e your-access-token-secret 
-   -f /path/to/the/file/we/will/create/ -m friends] [-t]
+   -f /path/to/the/file/we/will/create/ -m [user|friends|mentions|direct]] [-t]
    
    It can take a long time to run first time round as later pages of 
    results can take a long time to be returned from Twitter.
