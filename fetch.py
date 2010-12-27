@@ -16,13 +16,21 @@ except ImportError:
 # Valid options for TIMELINE or -m, and the corresponding endpoints at twitter.com/statuses/ and the local filenames we use.
 timelines = {
     'user': {
-        'remote': 'user_timeline',
+        'remote': 'statuses/user_timeline',
         'local': 'my_tweets'
     },
     'friends': {
-        'remote': 'friends_timeline',
+        'remote': 'statuses/friends_timeline',
         'local': 'my_friends_tweets'
-    }
+    },
+    'mentions': {
+        'remote': 'statuses/mentions',
+        'local': 'mentions'
+    },
+    'direct': {
+        'remote': 'direct_messages',
+        'local': 'direct'
+    },
 }
 
 
@@ -49,7 +57,7 @@ else:
     except ImportError:
         pass
 try:
-    REMOTE_TIMELINE = "http://twitter.com/statuses/%s.json" % timelines[TIMELINE]['remote']
+    REMOTE_TIMELINE = "http://twitter.com/%s.json" % timelines[TIMELINE]['remote']
 except KeyError:
     print "Invalid timeline: ", TIMELINE
     sys.exit(1)
