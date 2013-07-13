@@ -16,8 +16,7 @@ Now works with the Twitter API v1.1.
 
 1. mytweets requires python-oauth2 from 
    http://github.com/simplegeo/python-oauth2
-2. python-oauth2 in turn requires httplib2 from  
-   http://code.google.com/p/httplib2/
+2. python-oauth2 in turn requires httplib2 from http://code.google.com/p/httplib2/
 3. mytweets requires simplejson (unless Python 2.6) from 
    http://pypi.python.org/pypi/simplejson/
 
