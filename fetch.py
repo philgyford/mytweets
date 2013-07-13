@@ -20,7 +20,7 @@ timelines = {
         'local': 'my_tweets'
     },
     'friends': {
-        'remote': 'statuses/friends_timeline',
+        'remote': 'statuses/home_timeline',
         'local': 'my_friends_tweets'
     },
     'mentions': {
