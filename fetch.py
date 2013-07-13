@@ -207,8 +207,9 @@ def fetch_all(since_id = None):
 
         page += 1
         tweets = json.loads(content)
-        if 'error' in tweets:
-            raise ValueError, tweets['error']
+        print tweets
+        if 'errors' in tweets:
+            raise ValueError, tweets['errors'][0]['message'] + ' (code ' + str(tweets['errors'][0]['code']) + ')'
         if not tweets:
             break
         for tweet in tweets:
