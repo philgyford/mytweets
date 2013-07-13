@@ -24,7 +24,7 @@ timelines = {
         'local': 'my_friends_tweets'
     },
     'mentions': {
-        'remote': 'statuses/mentions',
+        'remote': 'statuses/mentions_timeline',
         'local': 'mentions'
     },
     'direct': {
