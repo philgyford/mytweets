@@ -1,4 +1,4 @@
-my_tweets.*
-my_friends_tweets.*
+*.json
 *.pyc
 config.py
+
