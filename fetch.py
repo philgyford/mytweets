@@ -65,7 +65,7 @@ else:
     except ImportError:
         pass
 try:
-    REMOTE_TIMELINE = "http://api.twitter.com/1/%s.json" % timelines[TIMELINE]['remote']
+    REMOTE_TIMELINE = "http://api.twitter.com/1.1/%s.json" % timelines[TIMELINE]['remote']
 except KeyError:
     print "Invalid timeline: ", TIMELINE
     sys.exit(1)
