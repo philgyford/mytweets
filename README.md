@@ -1,57 +1,58 @@
-mytweets
-Forked by Phil Gyford
+#mytweets
+
+Forked by Phil Gyford  
 phil@gyford.com
 
-This is a fork of simonw's original mytweets script: 
+This is a fork of simonw's original mytweets script:  
 http://github.com/simonw/mytweets/tree/master
-via
-http://github.com/blech/mytweets
+via http://github.com/blech/mytweets
 
 mytweets is a script to back up all your (and/or your friends') tweets to 
-local files.
-It can save them in JSON or Python's pickle format.
+local files. It can save them in JSON or Python's pickle format.
 
 Now works with the Twitter API v1.1.
 
-Notes:
-1) mytweets requires python-oauth2 from 
+## Notes
+
+1. mytweets requires python-oauth2 from 
    http://github.com/simplegeo/python-oauth2
-2) python-oauth2 in turn requires httplib2 from  
+2. python-oauth2 in turn requires httplib2 from  
    http://code.google.com/p/httplib2/
-3) mytweets requires simplejson (unless Python 2.6) from 
+3. mytweets requires simplejson (unless Python 2.6) from 
    http://pypi.python.org/pypi/simplejson/
 
 (or use the [pip](https://pypi.python.org/pypi/pip) `REQUIREMENTS.txt` file)
 
 
-Directions:
-1) Put fetch.py in any directory
+## Directions
 
-2) Run 'chmod +x fetch.py'
+1. Put `fetch.py` in any directory
 
-3) Create a file called config.py in the same directory as the fetchy.py 
+2. Run `chmod +x fetch.py`
+
+3. Create a file called config.py in the same directory as the fetchy.py 
    script.
 
-4) Set up your Twitter account with a new app:
-    a) Go to http://dev.twitter.com/ and log in with your Twitter account.
-    b) Go to 'My applications', in the drop-down menu under your icon, top-right.
-	c) Click the 'Create a new application' button.
-    c) Fill out the form.
+4. Set up your Twitter account with a new app:
+    a. Go to http://dev.twitter.com/ and log in with your Twitter account.
+    b. Go to 'My applications', in the drop-down menu under your icon, top-right.
+	c. Click the 'Create a new application' button.
+    d. Fill out the form.
         * Set 'Name' (it won't be publicly visible unless 
           you also use this app to post tweets).
 		* Set 'Description' (it's required).
         * Set 'Website' to some URL (it's required).
 		* Agree with the terms and submit the form.
 
-5) By default the application will be 'Read-only'. If you want to access direct 
+5. By default the application will be 'Read-only'. If you want to access direct 
    messages then go to the 'Settings' tab and change the 'Application Type' to 
    'Read, Write and Access direct messages'.
 
-6) At the bottom of the 'Details' tab page, click the 'Create my access token' 
+6. At the bottom of the 'Details' tab page, click the 'Create my access token' 
    button. You might need to refresh the page once or twice after that before the 
    new token appears.
 
-7) Copy and paste the 'Consumer key', 'Consumer secret', 'Access token' and
+7. Copy and paste the 'Consumer key', 'Consumer secret', 'Access token' and
    'Access token secret' into `config.py`.
 
     CONSUMER_KEY = 'Esdfy8iSDF89vdaDFSa789'
@@ -59,16 +60,16 @@ Directions:
     ACCESS_TOKEN = '74382-89FDSHJKjkdsfsfFDSY89SFDFES8978dfsfsda78fdl'
     ACCESS_TOKEN_SECRET = '0dfsYFDSs789SDF7uyfdshjksdf789SFSDFHJKSDF'
     
-    or use the -k, -s, -o, -e options on the command line.
+or use the -k, -s, -o, -e options on the command line.
 
-6) Add the FILE_PATH to where you want the resulting file of tweets to be 
+6. Add the FILE_PATH to where you want the resulting file of tweets to be 
    saved, into config.py: 
 
     FILE_PATH = '/path/to/the/file/we/will/create/'
 
    or use the -f option on the command line.
    
-7) Optionally add the TIMELINE argument which can be one of 'user'  
+7. Optionally add the TIMELINE argument which can be one of 'user'  
    (default), 'friends', 'mentions', 'direct', 'direct-sent', 'favorites' into 
    `config.py`:
 
@@ -76,16 +77,21 @@ Directions:
     
    or use the -m option on the command line.
 
-8) Run the command like so:
+8. Run the command like so:
 
-   ./fetch.py [-k your-consumer-key -s your-consumer-secret 
-   -o your-access-token -e your-access-token-secret 
-   -f /path/to/the/file/we/will/create/
-   -m [user|friends|mentions|direct|direct-sent|favorites]] [-t]
+    ./fetch.py [-k your-consumer-key -s your-consumer-secret \
+        -o your-access-token -e your-access-token-secret \
+        -f /path/to/the/file/we/will/create/ \
+        -m [user|friends|mentions|direct|direct-sent|favorites]] [-t]
+   
+   ie, if all your config settings are in `config.py` you'll only need to do
+   something like:
+
+    ./fetch.py -m friends
    
    It can take a long time to run first time round as later pages of 
    results can take a long time to be returned from Twitter.
    
-9) Run the command again at any time to save any tweets created since you 
+9. Run the command again at any time to save any tweets created since you 
    last ran the script.
 
