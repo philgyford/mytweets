@@ -36,7 +36,7 @@ timelines = {
         'local': 'direct-sent'
     },
     'favorites': {
-        'remote': 'favorites',
+        'remote': 'favorites/list',
         'local': 'favourites'
     }
 }
