@@ -33,10 +33,10 @@ Now works with the Twitter API v1.1.
    script.
 
 4. Set up your Twitter account with a new app:
-    a. Go to http://dev.twitter.com/ and log in with your Twitter account.
-    b. Go to 'My applications', in the drop-down menu under your icon, top-right.
-	c. Click the 'Create a new application' button.
-    d. Fill out the form.
+   1. Go to http://dev.twitter.com/ and log in with your Twitter account.
+   2. Go to 'My applications', in the drop-down menu under your icon, top-right.
+   3. Click the 'Create a new application' button.
+   4. Fill out the form.
         * Set 'Name' (it won't be publicly visible unless 
           you also use this app to post tweets).
 		* Set 'Description' (it's required).
@@ -54,39 +54,39 @@ Now works with the Twitter API v1.1.
 7. Copy and paste the 'Consumer key', 'Consumer secret', 'Access token' and
    'Access token secret' into `config.py`.
 
-    CONSUMER_KEY = 'Esdfy8iSDF89vdaDFSa789'
-    CONSUMER_SECRET = 'DFYUK89fddsfadFDDFS789vsdCXUdfs789xcvDSFH'
-    ACCESS_TOKEN = '74382-89FDSHJKjkdsfsfFDSY89SFDFES8978dfsfsda78fdl'
-    ACCESS_TOKEN_SECRET = '0dfsYFDSs789SDF7uyfdshjksdf789SFSDFHJKSDF'
+        CONSUMER_KEY = 'Esdfy8iSDF89vdaDFSa789'
+        CONSUMER_SECRET = 'DFYUK89fddsfadFDDFS789vsdCXUdfs789xcvDSFH'
+        ACCESS_TOKEN = '74382-89FDSHJKjkdsfsfFDSY89SFDFES8978dfsfsda78fdl'
+        ACCESS_TOKEN_SECRET = '0dfsYFDSs789SDF7uyfdshjksdf789SFSDFHJKSDF'
     
-or use the -k, -s, -o, -e options on the command line.
+   or use the `-k`, `-s`, `-o`, `-e` options on the command line.
 
 6. Add the FILE_PATH to where you want the resulting file of tweets to be 
    saved, into config.py: 
 
-    FILE_PATH = '/path/to/the/file/we/will/create/'
+        FILE_PATH = '/path/to/the/file/we/will/create/'
 
-   or use the -f option on the command line.
+   or use the `-f` option on the command line.
    
 7. Optionally add the TIMELINE argument which can be one of 'user'  
    (default), 'friends', 'mentions', 'direct', 'direct-sent', 'favorites' into 
    `config.py`:
 
-    TIMELINE = 'friends'
+        TIMELINE = 'friends'
     
-   or use the -m option on the command line.
+   or use the `-m` option on the command line.
 
 8. Run the command like so:
 
-    ./fetch.py [-k your-consumer-key -s your-consumer-secret \
-        -o your-access-token -e your-access-token-secret \
-        -f /path/to/the/file/we/will/create/ \
-        -m [user|friends|mentions|direct|direct-sent|favorites]] [-t]
+        ./fetch.py [-k your-consumer-key -s your-consumer-secret \
+            -o your-access-token -e your-access-token-secret \
+            -f /path/to/the/file/we/will/create/ \
+            -m [user|friends|mentions|direct|direct-sent|favorites]] [-t]
    
    ie, if all your config settings are in `config.py` you'll only need to do
    something like:
 
-    ./fetch.py -m friends
+        ./fetch.py -m friends
    
    It can take a long time to run first time round as later pages of 
    results can take a long time to be returned from Twitter.
