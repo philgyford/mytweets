@@ -8,7 +8,8 @@ http://github.com/simonw/mytweets/tree/master
 via http://github.com/blech/mytweets
 
 mytweets is a script to back up all your (and/or your friends') tweets to 
-local files. It can save them in JSON or Python's pickle format.
+local files. It can save them in JSON or Python's pickle format. Subsequent
+runs will fetch tweets since the last run and add them to the file(s).
 
 Now works with the Twitter API v1.1.
 
@@ -29,10 +30,7 @@ Now works with the Twitter API v1.1.
 
 2. Run `chmod +x fetch.py`
 
-3. Create a file called config.py in the same directory as the fetchy.py 
-   script.
-
-4. Set up your Twitter account with a new app:
+3. Set up your Twitter account with a new app:
    1. Go to http://dev.twitter.com/ and log in with your Twitter account.
    2. Go to 'My applications', in the drop-down menu under your icon, top-right.
    3. Click the 'Create a new application' button.
@@ -43,33 +41,34 @@ Now works with the Twitter API v1.1.
         * Set 'Website' to some URL (it's required).
 		* Agree with the terms and submit the form.
 
-5. By default the application will be 'Read-only'. If you want to access direct 
+4. By default the application will be 'Read-only'. If you want to access direct 
    messages then go to the 'Settings' tab and change the 'Application Type' to 
    'Read, Write and Access direct messages'.
 
-6. At the bottom of the 'Details' tab page, click the 'Create my access token' 
+5. At the bottom of the 'Details' tab page, click the 'Create my access token' 
    button. You might need to refresh the page once or twice after that before the 
    new token appears.
 
-7. Copy and paste the 'Consumer key', 'Consumer secret', 'Access token' and
-   'Access token secret' into `config.py`.
+6. Create a file called `config.py` in the same directory as the `fetchy.py`
+   script. Copy and paste the 'Consumer key', 'Consumer secret', 'Access token' and
+   'Access token secret' into it in this format:
 
         CONSUMER_KEY = 'Esdfy8iSDF89vdaDFSa789'
         CONSUMER_SECRET = 'DFYUK89fddsfadFDDFS789vsdCXUdfs789xcvDSFH'
         ACCESS_TOKEN = '74382-89FDSHJKjkdsfsfFDSY89SFDFES8978dfsfsda78fdl'
         ACCESS_TOKEN_SECRET = '0dfsYFDSs789SDF7uyfdshjksdf789SFSDFHJKSDF'
     
-   or use the `-k`, `-s`, `-o`, `-e` options on the command line.
+   Or else you can use the `-k`, `-s`, `-o`, `-e` options on the command line.
 
-6. Add the FILE_PATH to where you want the resulting file of tweets to be 
-   saved, into config.py: 
+7. Add the `FILE_PATH` to where you want the resulting file of tweets to be 
+   saved, into `config.py`: 
 
         FILE_PATH = '/path/to/the/file/we/will/create/'
 
    or use the `-f` option on the command line.
    
-7. Optionally add the TIMELINE argument which can be one of 'user'  
-   (default), 'friends', 'mentions', 'direct', 'direct-sent', 'favorites' into 
+8. Optionally add the TIMELINE argument which can be one of `user`  
+   (default), `friends`, `mentions`, `direct`, `direct-sent`, `favorites` into 
    `config.py`:
 
         TIMELINE = 'friends'
